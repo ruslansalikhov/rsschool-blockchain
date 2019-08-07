@@ -1,14 +1,14 @@
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>BLOCKCHAIN</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/xkcd.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -25,8 +25,266 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>BLOCKCHAIN</h1>
+					<h2>изобретаем вместе</h2>
+                    <br/>
+					<p>
+						<small>Автор <a href="https://t.me/ruslansalikhov">Руслан Салихов</a> специально для <a href="https://rs.school/">RSSchool</a></small>
+					</p>
+				</section>
+				<section>
+					<section>
+						<img src="images/poker.jpg">
+						<aside class="notes">
+							<p>Предтавьте 3 друзей встретились во время отпуска и решили сыграть в покер. Но у них не было наличных, но были карандаши и бумага.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/paper1.png">
+						<aside class="notes">
+                            <p>И они вести балансы на бумажке.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/paper2.png">
+						<aside class="notes">
+                            <p>Но зная привычки друг друга, решили вести записи каждый самостоятельно.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/paper3.png">
+						<aside class="notes">
+                            <p>В этом случае, если кто то и обманет (ну или случайно ошибется), то ошибку будет замечена.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/world.png" width="50%">
+						<aside class="notes">
+                            <p>Идея так пришлась друзьями по вкусу, что они решили продолжить использовать и дальше дальнейшем, когда разъехали.</p>
+                            <p>Но они сталкнулись с рядом проблем.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/world2.png" width="50%">
+						<aside class="notes">
+							<p>Например, когда участник хочет произвести какое то действие, он должен сообщить о нем остальным.</p>
+						</aside>
+					</section>
+					<section>
+						<img src="images/mitm.jpg">
+						<aside class="notes">
+                            <p>Но здесь есть одна большая проблема - MITM. Кто угодно мог бы перехватытвать такие сообщения и изменять их.</p>
+
+                            <!--
+                            Анекдот в конспекте, для проверяющих.
+
+                            Чапаев из Англии вернулся с чемоданом валюты.
+                             - Василий Иванович, а откуда денег-то столько?
+                             - Да, понимаешь, приехал я в Лондон. Зашёл в какой-то их клуб. Смотрю, играют, я подсел.
+                              Играем по малой, тут один мужик: "у меня очко". Я ему: "покажи".
+                              А он: "у нас тут все джентльмены, мы друг другу на слово верим".
+                               Тут-то мне карта и попёрла.
+                               -->
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Криптография</h2>
+						<img src="images/crypto1.png" width="80%">
+						<aside class="notes">
+                            <p>Здесь на помощь к нам приходит криптография с закрытым ключом (асимметричная криптография).</p>
+						</aside>
+					</section>
+                    <section>
+                        <img src="images/crypto2.png" width="80%">
+                        <aside class="notes">
+                            <p>Она подарила нам - электронно-цифровую подпись. Где обладатель закрытого (секретного ключа) может подписать какой либо документ.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/crypto3.png" width="80%">
+                        <aside class="notes">
+                            <p>А все остальные, зная открытый ключ (не секретный), могут проверить что под этим документом подписался владелец закрытого ключа.</p>
+                        </aside>
+                    </section>
+				</section>
+                <section>
+                    <section>
+                        <h2>Проблема двойной траты</h2>
+                        <img src="images/doublespend.png" width="50%">
+                        <aside class="notes">
+                            <p>Но остается другая проблема. Которая называется проблем двойной траты</p>
+                            <p>Как определить чья история верная. Кто за кем отправлял средства? Как договориться незнакомцам друг с другом?</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/linkedlist1.png" width="80%">
+                        <aside class="notes">
+                            <p>Катя работавшая бухгалтером предложила компоновать транзакции в блоки, по очереди, блоки нумеровать и как бы "сшивать".</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/hans.png" width="80%">
+                        <aside class="notes">
+                            <p>В это время к ребятам решил присоединиться Ханс. И ребята выслали ему копию своих списков.</p>
+                            <p>Ханс не отличался доверчивостью и понял, что не очень быть уверен, что какие либо из листов не были изменены (например добавлены или удалены транзакции).</p>
+                            <p>Ханс как раз учился Rolling Scopes School и узнал про такую вещь как хеширование. И предложил ребятам ряд улучшений.</p>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-transition="fade-in fade-out">
+                        <h2>Hash функция</h2>
+                        <h3>&nbsp;</h3>
+                        <img src="images/hash1.png" width="50%">
+                        <aside class="notes">
+                            <p>(1-3) Функция преобразующая массив входных данных произвольной длины, в битвую строку фиксированной длины. (1-3)</p>
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <h2>Hash функция</h2>
+                        <h3>&nbsp;</h3>
+                        <img src="images/hash2.png" width="50%">
+                        <aside class="notes">
+                            <p>(1-3) Функция преобразующая массив входных данных произвольной длины, в битвую строку фиксированной длины. (1-3)</p>
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <h2>Hash функция</h2>
+                        <h3>&nbsp;</h3>
+                        <img src="images/hash3.png" width="50%">
+                        <aside class="notes">
+                            <p>(1-3) Функция преобразующая массив входных данных произвольной длины, в битвую строку фиксированной длины. (1-3)</p>
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <h2>Hash функция</h2>
+                        <h3 class="fragment" data-fragment-index="1">(Криптографическая)</h3>
+                        <img src="images/hash4.png" width="50%">
+                        <aside class="notes">
+                            <p>(4) Криптографическая функция - 4: необратимая (невозможность поиска первого прообраза, второго прообраза), устойчивость с коллизиям).</p>
+                            <p>Лавинный эффект</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/blockchain1.png" width="80%">
+                        <aside class="notes">
+                            <p>И Ханс предложил в каждый новый блок включать так же хэш предыдущего блока. Теперь стало возможно новым игрокам убедиться в правильности исторических данных.</p>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Консенсус</h2>
+                        <img src="images/moremembers.png" width="50%">
+                        <aside class="notes">
+                            <p>
+                                Со временем количество участников росло. Кто то приходил, кто то уходил.
+                                И стали появляться проблемы - от тех, что кто то не был в сети, когда была его очередь компоновать блок, до тех, что кто то создавал разные блоки, разную последовательность блоков.
+                                Пока ребята знали друг друга лично, они могли договориться. И они стали думать как сделать систему такой, чтобы убрать необходимость доверия.
+                            </p>
+                            <p>
+                                И один новый участник, представившийся Сатоши, придумал как всем, не доверяя друг другу, приходить к консенсусу.
+                            </p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Proof-of-Work</h2>
+                        <img src="images/pow.jpg" width="80%">
+                        <aside class="notes">
+                            <p>
+                                Он придумал динамическую задачку, решение которой можно было бы находить в среднем за 10 минут (время на самом деле может быть любым),
+                                независмо от количества участников. А мотивацией для участников служила бы денежное вознаграждение, с которым все согласились.
+                                Назвал он эту задачу - Proof of Work.
+                            </p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Снова хеши</h2>
+                        <p>f(?) = 10101010110110010101001</p>
+                        <table width="100%" class="fragment" data-fragment-index="1">
+                            <tr>
+                                <td><span class="fragment" data-fragment-index="1">f(?) = 0.....</span></td>
+                                <td><span class="fragment" data-fragment-index="2">50%</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="fragment" data-fragment-index="3">f(?) = 00....</span></td>
+                                <td><span class="fragment" data-fragment-index="4">25%</span></td>
+                            </tr>
+                        </table>
+                        <aside class="notes">
+                            <p>Для объяснения задачи вернемся к нашим хэшам. Сатоши решил использовать свойства хешей. Их невозможно предсказать. И найти прообраз можно только перебором.</p>
+                            <p>(1-2) Представим хеш в двоичном виде. С какой вероятностью перебором можно найти такой прообраз, чтобы свертка начиналась с 0</p>
+                            <p>(3-4) А с 00 нулей?</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/blockchain2.png" width="80%">
+                        <aside class="notes">
+                            <p>
+                                Для этого Сатоши расширил блок: добавил поля для указания кому идет награда, и добавил специальное поле nonce. Для того, чтобы изменяя его мы получали
+                                разный хеш блока. Теперь все участники (заинтересованные в награде) пытались создать свой блок. Изменяя nonce таким образом, чтобы хеш блока начинался с определенного кол-ва нулей.
+                            </p>
+                            <p>
+                                Так же все договорились о правиле - если средняя частота нахождения блоков изменяется (становится не равно 10 минутам), то каждые N (2016) блоков идет пересчет сложности.
+                                т.е. требуемое кол-во нулей изменяется - чтобы вернуться к среднему значению поиска раз в 10 минут.
+                            </p>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Консенсус</h2>
+                        <img src="images/chain1.png" width="80%">
+                        <aside class="notes">
+                            <p>Теперь все решали дачку, чтобы их блок приняли остальные.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Консенсус</h2>
+                        <img src="images/chain2.png" width="80%">
+                        <aside class="notes">
+                            <p>Если кто то находил решение задачи, то он публиковал блок и все его принимали.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Консенсус</h2>
+                        <img src="images/chain3.png" width="80%">
+                        <aside class="notes">
+                            <p>И переключались на задачу по поиску нового блока.</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Консенсус</h2>
+                        <img src="images/chain4.png" width="80%">
+                        <aside class="notes">
+                            <p>Иногда случалось так, что появлялись 2 блока на одной высоте (это явление называется форк).</p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Консенсус</h2>
+                        <img src="images/chain5.png" width="80%">
+                        <aside class="notes">
+                            <p>Для решения подобной проблемы - существует правило длинной цепочки. Верная цепь та, что длиннее.
+                                (стоит заметить что в реальности правило сложнее)</p>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <h2>Интересные ссылки</h2>
+                    <p><a href="https://anders.com/blockchain/hash.html">Поиграть с хэшами и блоками</a></p>
+                    <p><a href="http://vas3k.ru/blog/blockchain/">Описание человеческим языком</a></p>
+                    <p><a href="https://t.me/blockchain_uz">Новости БЧ у Узбекистане</a></p>
+                </section>
+                <section>
+                    <h2>Вопросы</h2>
+                    <img src="images/grandmother.jpg" width="50%">
+                </section>
+                <section>
+                    <h2>СПАСИБО</h2>
+                </section>
 			</div>
 		</div>
 
